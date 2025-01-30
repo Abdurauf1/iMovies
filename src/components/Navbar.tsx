@@ -14,7 +14,7 @@ const Navbar = () => {
           <ul className="flex gap-5">
             {navLinks.map((navLink, index) => (
               <li key={index}>
-                <a href={navLink.path}>{navLink.title}</a>
+                <a className="hover:text-red-500 duration-200" href={navLink.path}>{navLink.title}</a>
               </li>
             ))}
           </ul>

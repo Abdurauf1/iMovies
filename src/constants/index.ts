@@ -6,5 +6,17 @@ export const navLinks = [
   {
     title: "Movies",
     path: "/movies"
+  },
+  {
+    title: "Series",
+    path: "/series"
+  },
+  {
+    title: "Cartoons",
+    path: "/cartoons"
+  },
+  {
+    title: "Anime",
+    path: "/anime"
   }
 ]
