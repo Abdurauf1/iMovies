@@ -4,14 +4,6 @@ type Props = {
   num: number
 }
 
-const HeroSwiper = ({ num }: Props) => {
-  return (
-    <div className="w-full h-full bg-[url()]">
-      <h1>hello {num} </h1>
-    </div>
-  )
-}
-
 const Hero = () => {
   return (
     <div className="w-screen h-screen">
@@ -34,6 +26,14 @@ const Hero = () => {
           <HeroSwiper num={4} />
         </SwiperSlide>
       </Swiper>
+    </div>
+  )
+}
+
+const HeroSwiper = ({ num }: Props) => {
+  return (
+    <div className="w-screen h-screen flex items-center justify-center">
+      <h1>Slide {num}</h1>
     </div>
   )
 }
