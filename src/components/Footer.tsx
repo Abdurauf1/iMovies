@@ -1,6 +1,10 @@
-const Footer = () => {
+import { FC } from "react"
+
+const Footer: FC = () => {
   return (
-    <footer>Footer</footer>
+    <footer className="w-full">
+      
+    </footer>
   )
 }
 

@@ -2,8 +2,9 @@ import PlayIcon from "../assets/icons/play.png"
 import MoonIcon from "../assets/icons/moon.svg"
 import { navLinks } from "../constants"
 import { Link } from "react-router-dom"
+import { FC } from "react"
 
-const Navbar = () => {
+const Navbar: FC = () => {
   return (
     <header className="w-full bg-transparent fixed top-0 z-50">
       <nav className="container py-5 flex justify-between items-center mx-auto">

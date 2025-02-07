@@ -1,17 +1,19 @@
+import { FC } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 type Props = {
   num: number
 }
 
-const Hero = () => {
+const Hero: FC = () => {
   return (
     <div className="w-screen h-screen">
       <Swiper
         className="h-full w-full"
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={true}
+        autoplay
+        loop
       >
         <SwiperSlide>
           <HeroSwiper num={1} />

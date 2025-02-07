@@ -1,6 +1,7 @@
-import Hero from "../components/Hero"
+import { FC } from "react"
+import { Hero } from "../components/"
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <>
       <Hero />
