@@ -12,10 +12,6 @@ export const navLinks = [
     path: "/series"
   },
   {
-    title: "Cartoons",
-    path: "/cartoons"
-  },
-  {
     title: "Anime",
     path: "/anime"
   }

@@ -1,9 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 
-const HeroSwiper = () => {
+type Props = {
+  num: number
+}
+
+const HeroSwiper = ({ num }: Props) => {
   return (
     <div className="w-full h-full bg-[url()]">
-
+      <h1>hello {num} </h1>
     </div>
   )
 }
@@ -15,18 +19,19 @@ const Hero = () => {
         className="h-full w-full"
         spaceBetween={0}
         slidesPerView={1}
+        autoplay={true}
       >
-        <SwiperSlide className="text-center">
-          <HeroSwiper />
+        <SwiperSlide>
+          <HeroSwiper num={1} />
         </SwiperSlide>
-        <SwiperSlide className="text-center">
-          <HeroSwiper />
+        <SwiperSlide>
+          <HeroSwiper num={2} />
         </SwiperSlide>
-        <SwiperSlide className="text-center">
-          <HeroSwiper />
+        <SwiperSlide>
+          <HeroSwiper num={3} />
         </SwiperSlide>
-        <SwiperSlide className="text-center">
-          <HeroSwiper />
+        <SwiperSlide>
+          <HeroSwiper num={4} />
         </SwiperSlide>
       </Swiper>
     </div>

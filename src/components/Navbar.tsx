@@ -1,6 +1,7 @@
 import PlayIcon from "../assets/icons/play.png"
 import MoonIcon from "../assets/icons/moon.svg"
 import { navLinks } from "../constants"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -14,12 +15,12 @@ const Navbar = () => {
           <ul className="flex gap-5">
             {navLinks.map((navLink, index) => (
               <li key={index}>
-                <a className="hover:text-red-500 duration-200" href={navLink.path}>{navLink.title}</a>
+                <Link className="hover:text-red-500 duration-200" to={navLink.path}>{navLink.title}</Link>
               </li>
             ))}
           </ul>
           <div className="cursor-pointer">
-            <img className="w-8" src={MoonIcon} alt="moon_icon" />
+            <img className="w-7" src={MoonIcon} alt="moon_icon" />
           </div>
         </div>
       </nav>

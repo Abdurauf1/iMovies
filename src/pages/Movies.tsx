@@ -1,6 +1,6 @@
 const Movies = () => {
   return (
-    <div>Movies</div>
+    <div className="w-screen h-screen flex items-center justify-center">Movies</div>
   )
 }
 
