@@ -1,43 +1,48 @@
 import { FC } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
-
-type Props = {
-  num: number
-}
+import { MovieType } from "../types"
+import { Autoplay } from "swiper/modules"
+import { useGetPopularMoviesQuery } from "../features/MovieApiSlice"
+import { HeroSlide } from "./"
 
 const Hero: FC = () => {
+  const { data, isLoading, error } = useGetPopularMoviesQuery([])
+
+  if (isLoading) {
+    return <h1>Loading...</h1>
+  }
+
+  if (error) {
+    return <h1>Error fetching movies</h1>
+  }
+
   return (
-    <div className="w-screen h-screen">
-      <Swiper
-        className="h-full w-full"
-        spaceBetween={0}
-        slidesPerView={1}
-        autoplay
-        loop
-      >
-        <SwiperSlide>
-          <HeroSwiper num={1} />
+    <Swiper
+      className="lg:h-screen sm:h-[640px] xs:h-[520px] h-[460px] w-full"
+      loop={true}
+      slidesPerView={1}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false
+      }}
+      modules={[Autoplay]}
+    >
+      {data.results.map((movie: MovieType) => (
+        <SwiperSlide
+          key={movie.id}
+          className="h-full w-full"
+          style={{
+            backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.5)),url('https://image.tmdb.org/t/p/original/${movie.backdrop_path}'`,
+            backgroundPosition: "center",
+            backgroundSize: "cover"
+          }}
+        >
+          {({ isActive }) => (isActive ? <HeroSlide movie={movie} /> : null)}
         </SwiperSlide>
-        <SwiperSlide>
-          <HeroSwiper num={2} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HeroSwiper num={3} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HeroSwiper num={4} />
-        </SwiperSlide>
-      </Swiper>
-    </div>
+      ))}
+    </Swiper>
   )
 }
 
-const HeroSwiper = ({ num }: Props) => {
-  return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <h1>Slide {num}</h1>
-    </div>
-  )
-}
 
 export default Hero
