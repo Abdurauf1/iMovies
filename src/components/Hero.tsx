@@ -3,14 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { MovieType } from "../types"
 import { Autoplay } from "swiper/modules"
 import { useGetPopularMoviesQuery } from "../features/MovieApiSlice"
-import { HeroSlide } from "./"
+import { HeroSlide, Loading } from "./"
 
 const Hero: FC = () => {
   const { data, isLoading, error } = useGetPopularMoviesQuery([])
 
-  if (isLoading) {
-    return <h1>Loading...</h1>
-  }
+  if (isLoading) return <Loading />
 
   if (error) {
     return <h1>Error fetching movies</h1>
@@ -22,7 +20,7 @@ const Hero: FC = () => {
       loop={true}
       slidesPerView={1}
       autoplay={{
-        delay: 5000,
+        delay: 10000,
         disableOnInteraction: false
       }}
       modules={[Autoplay]}

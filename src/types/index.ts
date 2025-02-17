@@ -3,6 +3,11 @@ export interface NavLinksType {
   path: string
 }
 
+export interface FooterLinksType {
+  title: string
+  path: string
+}
+
 export interface PosterPropsType {
   className?: string
   posterPath: string

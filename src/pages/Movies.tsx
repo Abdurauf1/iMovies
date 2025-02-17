@@ -1,13 +1,13 @@
 import { FC } from "react"
 import { useGetMoviesQuery } from "../features/MovieApiSlice"
+import { Loading } from "../components"
 
 const Movies: FC = () => {
   const { data, error, isLoading } = useGetMoviesQuery([])
 
-  if (isLoading) return <h1>Loading movies...</h1>
-  
+  if (isLoading) return <Loading />
+
   if (error) {
-    console.log(error);
     return <h1>Error fetching movies.</h1>
   }
 

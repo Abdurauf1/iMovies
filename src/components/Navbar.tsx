@@ -1,12 +1,27 @@
 import PlayIcon from "../assets/icons/play.png"
 import { navLinks } from "../constants"
 import { Link } from "react-router-dom"
-import { FC } from "react"
-import {  } from "react-icons"
+import { FC, useEffect, useState } from "react"
+import { FaMoon } from "react-icons/fa"
 
 const Navbar: FC = () => {
+  const [scroll, setScroll] = useState<number>(window.scrollY)
+
+  const handleScroll = () => {
+    setScroll(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+
   return (
-    <header className="w-full bg-transparent fixed top-0 z-50">
+    <header className={`${scroll > 20 ? "backdrop-blur-xl" : "bg-transparent"} w-full fixed top-0 z-50`}>
       <nav className="container py-5 flex justify-between items-center mx-auto">
         <a href="/" className="flex gap-1">
           <img className="w-8" src={PlayIcon} alt="play_icon" />
@@ -21,7 +36,7 @@ const Navbar: FC = () => {
             ))}
           </ul>
           <div className="cursor-pointer">
-            
+            <FaMoon className="text-white" />
           </div>
         </div>
       </nav>
