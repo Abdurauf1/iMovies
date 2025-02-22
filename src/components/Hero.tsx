@@ -16,8 +16,8 @@ const Hero: FC = () => {
 
   return (
     <Swiper
+      loop
       className="lg:h-screen sm:h-[640px] xs:h-[520px] h-[460px] w-full"
-      loop={true}
       slidesPerView={1}
       autoplay={{
         delay: 10000,
