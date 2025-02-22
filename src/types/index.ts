@@ -3,14 +3,9 @@ export interface NavLinksType {
   path: string
 }
 
-export interface FooterLinksType {
-  title: string
-  path: string
-}
-
 export interface PosterPropsType {
   className?: string
-  posterPath: string
+  poster_path: string
   title: string
 }
 
@@ -31,4 +26,9 @@ export interface ImageProps {
   width: string | number
   height: string | number
   effect?: "zoomIn"
+}
+
+export interface FooterLinksType {
+  title: string
+  path: string
 }

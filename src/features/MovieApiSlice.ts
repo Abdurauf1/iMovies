@@ -5,12 +5,12 @@ export const movieApi = createApi({
   reducerPath: "movieApi",
   baseQuery: fetchBaseQuery({
     baseUrl: TMDB_API_BASE_URL,
-    prepareHeaders: (headers) => {
+    prepareHeaders: headers => {
       headers.set("Accept", "application/json")
       return headers
     }
   }),
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     getMovies: builder.query({
       query: () => `/discover/movie?api_key=${TMDB_API_KEY}`,
     }),

@@ -3,7 +3,7 @@ import { PosterPropsType } from "../types"
 import { useMotion } from "../hooks/useMotion"
 import { motion } from "framer-motion"
 
-const Poster: FC<PosterPropsType> = ({ posterPath, title, className }) => {
+const Poster: FC<PosterPropsType> = ({ poster_path, title, className }) => {
   const { zoomIn } = useMotion()
 
   return (
@@ -15,7 +15,7 @@ const Poster: FC<PosterPropsType> = ({ posterPath, title, className }) => {
         className="h-[380px] w-[254px]"
       >
         <img
-          src={`https://image.tmdb.org/t/p/original/${posterPath}`}
+          src={`https://image.tmdb.org/t/p/original/${poster_path}`}
           alt={title}
           className="object-cover rounded-xl shadow-lg"
         />

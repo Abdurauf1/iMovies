@@ -19,7 +19,7 @@ export const navLinks: NavLinksType[] = [
   }
 ]
 
-export const sectionTitle = ["Trending movies", "Top rated movies", "Trending series", "Top rated series"]
+export const sectionTitle: string[] = ["Trending movies", "Top rated movies", "Trending series", "Top rated series"]
 
 export const footerLinks: FooterLinksType[] = [
   {
