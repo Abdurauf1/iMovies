@@ -1,7 +1,7 @@
 import { FC } from "react"
-import { Card, Loading } from "./"
+import { Loading } from "./"
 import { watchBtn } from "../styles"
-import MovieSlides from "./MovieSlides"
+import { MovieSlides } from "./"
 import { useGetMoviesQuery } from "../features/MovieApiSlice"
 
 interface PropType {
@@ -24,7 +24,7 @@ const Section: FC<PropType> = ({ title }) => {
         <button className={`${watchBtn} border-1 border-white cursor-pointer`}>View all</button>
       </div>
       <div>
-        <MovieSlides movies={data.results} category="" />
+        <MovieSlides movies={data.results.slice(0, 10)} category="" />
       </div>
     </section>
   )
