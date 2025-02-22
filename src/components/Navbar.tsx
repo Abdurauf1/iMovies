@@ -24,7 +24,7 @@ const Navbar: FC = () => {
       <nav className="container py-5 flex justify-between items-center mx-auto">
         <a href="/" className="flex gap-1">
           <img className="w-8" src={PlayIcon} alt="play_icon" />
-          <span className="font-bold text-2xl text-white">iMovies</span>
+          <span className="font-bold text-2xl text-black dark:text-white">iMovies</span>
         </a>
         <div className="flex items-center gap-8">
           <ul className="flex gap-5">

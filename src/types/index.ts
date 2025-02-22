@@ -28,6 +28,12 @@ export interface ImageProps {
   effect?: "zoomIn"
 }
 
+export interface SectionsType {
+  title: string
+  category: string
+  type: string
+}
+
 export interface FooterLinksType {
   title: string
   path: string

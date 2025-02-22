@@ -10,7 +10,7 @@ interface PropType {
 
 const MovieSlides: FC<PropType> = ({ movies, category }) => {
   return (
-    <Swiper slidesPerView="auto" spaceBetween={15}>
+    <Swiper slidesPerView="auto" spaceBetween={15} className="mt-6 mb-14">
       {movies.map((movie) => (
         <SwiperSlide key={movie.id} className="flex mt-1 flex-col gap-2 max-w-[170px] rounded-lg">
           <Card movie={movie} category={category} />
