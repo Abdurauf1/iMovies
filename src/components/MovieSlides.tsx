@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { MovieType } from "../types"
-import Card from "./Card"
+import { Card } from "./"
 
 interface PropType {
   movies: MovieType[]

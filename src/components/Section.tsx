@@ -1,6 +1,5 @@
 import { FC } from "react"
 import { Loading } from "./"
-import { watchBtn } from "../styles"
 import { MovieSlides } from "./"
 import { useGetMoviesQuery } from "../features/MovieApiSlice"
 
@@ -21,7 +20,6 @@ const Section: FC<PropType> = ({ title }) => {
     <section>
       <div className="flex justify-between">
         <h2 className="text-white text-2xl font-bold">{title}</h2>
-        <button className={`${watchBtn} border-1 border-white cursor-pointer`}>View all</button>
       </div>
       <div>
         <MovieSlides movies={data.results.slice(0, 10)} category="" />

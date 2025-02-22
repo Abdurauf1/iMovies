@@ -23,3 +23,12 @@ export interface MovieType {
   overview: string
   backdrop_path: string
 }
+
+export interface ImageProps {
+  src: string
+  className: string
+  alt: string
+  width: string | number
+  height: string | number
+  effect?: "zoomIn"
+}
