@@ -14,7 +14,7 @@ const Image: FC<ImageProps> = ({ src, alt, className, width, height, effect }) =
       src={src}
       width={width}
       height={height}
-      className={"transition-all duration-300 ease-in" + className + isImageLoaded ? "" : ""}
+      className={"transition-all duration-300 ease-in" + className + isImageLoaded ? effect : ""}
       alt={alt}
       onLoad={onLoad}
     />

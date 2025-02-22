@@ -5,9 +5,10 @@ import { useGetMoviesQuery } from "../features/MovieApiSlice"
 
 interface PropType {
   title: string
+  category: string
 }
 
-const Section: FC<PropType> = ({ title }) => {
+const Section: FC<PropType> = ({ title, category }) => {
   const { data, isLoading, error } = useGetMoviesQuery([])
 
   if (isLoading) return <Loading />
@@ -22,7 +23,7 @@ const Section: FC<PropType> = ({ title }) => {
         <h2 className="text-white text-2xl font-bold">{title}</h2>
       </div>
       <div>
-        <MovieSlides movies={data.results.slice(0, 10)} category="" />
+        <MovieSlides movies={data.results.slice(0, 10)} category={category} />
       </div>
     </section>
   )
