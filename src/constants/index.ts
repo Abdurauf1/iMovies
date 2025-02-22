@@ -19,6 +19,8 @@ export const navLinks: NavLinksType[] = [
   }
 ]
 
+export const sectionTitle = ["Trending movies", "Top rated movies", "Trending series", "Top rated series"]
+
 export const footerLinks: FooterLinksType[] = [
   {
     title: "Home",
@@ -50,6 +52,18 @@ export const footerLinks: FooterLinksType[] = [
   },
   {
     title: "Privacy Policy",
+    path: "#"
+  },
+  {
+    title: "You Must Watch",
+    path: "#"
+  },
+  {
+    title: "Recent Release",
+    path: "#"
+  },
+  {
+    title: "Top IMDB",
     path: "#"
   },
 ]
