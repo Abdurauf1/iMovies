@@ -1,15 +1,20 @@
 import { FC } from "react"
 import { Loading } from "./"
 import { MovieSlides } from "./"
-import { useGetMoviesQuery } from "../features/MovieApiSlice"
+import { useGetShowsQuery } from "../features/GetShowsApiSlice"
 
 interface PropType {
   title: string
   category: string
+  type: string
 }
 
-const Section: FC<PropType> = ({ title, category }) => {
-  const { data, isLoading, error } = useGetMoviesQuery([])
+const Section: FC<PropType> = ({ title, category, type }) => {
+  const { data, isLoading, error } = useGetShowsQuery({
+    category: category,
+    type: type,
+    page: 1
+  })
 
   if (isLoading) return <Loading />
 

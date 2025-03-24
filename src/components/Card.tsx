@@ -9,10 +9,10 @@ interface PropType {
 }
 
 const Card: FC<PropType> = ({ movie, category }) => {
-  const { id, poster_path, original_title } = movie
+  const { id, poster_path, original_title } = movie;
 
   return (
-    <Link to={`/${category}/${id}`} className="w-[170px] h-[216px] rounded-lg overflow-hidden">
+    <Link to={`/${category}/${id}`} className="w-[170px] !h-[216px] rounded-lg overflow-hidden">
       <Image
         width={170}
         height={250}

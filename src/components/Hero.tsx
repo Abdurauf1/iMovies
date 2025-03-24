@@ -2,17 +2,19 @@ import { FC } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { MovieType } from "../types"
 import { Autoplay } from "swiper/modules"
-import { useGetPopularMoviesQuery } from "../features/MovieApiSlice"
-import { HeroSlide, Loading } from "./"
+import { HeroSlide, Loading, Error } from "./"
+import { useGetShowsQuery } from "../features/GetShowsApiSlice"
 
 const Hero: FC = () => {
-  const { data, isLoading, error } = useGetPopularMoviesQuery([])
+  const { data, isLoading, error } = useGetShowsQuery({
+    category: "movie",
+    type: "popular",
+    page: 1
+  })
 
   if (isLoading) return <Loading />
 
-  if (error) {
-    return <h1>Error fetching movies</h1>
-  }
+  if (error) return <Error />
 
   return (
     <Swiper

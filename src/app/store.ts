@@ -1,15 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { movieApi } from "../features/MovieApiSlice";
-import { animeApi } from "../features/AnimeApiSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { tmdbApi } from "../features/GetShowsApiSlice";
 
 export const store = configureStore({
   reducer: {
-    [movieApi.reducerPath]: movieApi.reducer,
-    [animeApi.reducerPath]: animeApi.reducer
+    [tmdbApi.reducerPath]: tmdbApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(movieApi.middleware, animeApi.middleware)
+    getDefaultMiddleware().concat(tmdbApi.middleware)
 })
 
 type RootState = ReturnType<typeof store.getState>

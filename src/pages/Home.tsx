@@ -9,8 +9,8 @@ const Home: FC = () => {
       <Hero />
       <main className="bg-gray-900 py-20">
         <div className={`${maxWidth} lg:mt-12 md:mt-8 sm:mt-6 xs:mt-4 mt-2`}>
-          {sections.map(({ title, category }) => (
-            <Section key={title} title={title} category={category} />
+          {sections.map(({ title, category, type }) => (
+            <Section key={title} title={title} category={category} type={type} />
           ))}
         </div>
       </main>

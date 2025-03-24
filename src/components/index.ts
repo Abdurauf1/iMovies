@@ -8,8 +8,10 @@ import Card from "./Card";
 import Section from "./Section";
 import MovieSlides from "./MovieSlides";
 import Image from "./Image";
+import Error from "./Error";
 
 export {
+  Error,
   Image,
   MovieSlides,
   Section,
