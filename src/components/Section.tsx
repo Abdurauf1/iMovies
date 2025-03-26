@@ -19,13 +19,15 @@ const Section: FC<PropType> = ({ title, category, type }) => {
   if (isLoading) return <Loading />
 
   if (error) {
-    return <h1>Error fetching movies.</h1>
+    return <h1>Error fetching {title}.</h1>
   }
 
   return (
     <section>
       <div className="flex justify-between">
-        <h2 className="text-white text-2xl font-bold">{title}</h2>
+        <h2 className="text-white text-2xl font-bold">
+          <span>{title}</span>
+        </h2>
       </div>
       <div>
         <MovieSlides movies={data.results.slice(0, 10)} category={category} />

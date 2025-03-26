@@ -17,7 +17,7 @@ const HeroSlide: FC<{ movie: MovieType }> = ({ movie }) => {
   }
 
   const showTrailer = () => {
-
+    
   }
 
   return (

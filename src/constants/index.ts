@@ -40,11 +40,11 @@ export const sections: SectionsType[] = [
     category: "tv",
     type: "top_rated",
   },
-  {
-    title: "Trending animes",
-    category: "anime",
-    type: "popular",
-  },
+  // {
+  //   title: "Trending animes",
+  //   category: "anime",
+  //   type: "popular",
+  // },
 ]
 
 export const footerLinks: FooterLinksType[] = [
