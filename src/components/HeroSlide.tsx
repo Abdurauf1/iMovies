@@ -5,8 +5,10 @@ import { Poster } from "./"
 import { MovieType } from "../types"
 import { mainHeading, maxWidth, paragraph, watchBtn } from "../styles"
 import { useNavigate } from "react-router-dom"
+import { useAppContext } from "../context/context"
 
 const HeroSlide: FC<{ movie: MovieType }> = ({ movie }) => {
+  const { setIsModalOpen } = useAppContext()
   const { staggerContainer, fadeDown } = useMotion()
   const navigate = useNavigate()
 
@@ -17,7 +19,7 @@ const HeroSlide: FC<{ movie: MovieType }> = ({ movie }) => {
   }
 
   const showTrailer = () => {
-    
+    setIsModalOpen(true)
   }
 
   return (

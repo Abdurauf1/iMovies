@@ -9,8 +9,10 @@ import Section from "./Section";
 import MovieSlides from "./MovieSlides";
 import Image from "./Image";
 import Error from "./Error";
+import VideoModal from "./VideoModal";
 
 export {
+  VideoModal,
   Error,
   Image,
   MovieSlides,
