@@ -13,7 +13,7 @@ const Footer: FC = () => {
         <ul className="grid grid-cols-3 justify-start w-fit mx-auto gap-x-20">
           {footerLinks.map((link, index) => (
             <li key={index}>
-              <a className="text-white hover:underline" href={link.path}>{link.title}</a>
+              <a className="text-white hover:text-red-500 duration-500" href={link.path}>{link.title}</a>
             </li>
           ))}
         </ul>

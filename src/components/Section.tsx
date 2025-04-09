@@ -2,6 +2,7 @@ import { FC } from "react"
 import { Loading } from "./"
 import { MovieSlides } from "./"
 import { useGetShowsQuery } from "../features/GetShowsApiSlice"
+import { Link } from "react-router-dom"
 
 interface PropType {
   title: string
@@ -25,9 +26,9 @@ const Section: FC<PropType> = ({ title, category, type }) => {
   return (
     <section>
       <div className="flex justify-between">
-        <h2 className="text-white text-2xl font-bold">
-          <span>{title}</span>
-        </h2>
+        <Link to={`/${category}?type=${type}`} className="text-white text-2xl font-bold hover:text-red-500 duration-200">
+          <span>{title} &gt;</span>
+        </Link>
       </div>
       <div>
         <MovieSlides movies={data.results.slice(0, 10)} category={category} />

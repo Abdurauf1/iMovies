@@ -1,10 +1,10 @@
 import Home from "./Home";
 import NotFound from "./NotFound";
-import Details from "./Details";
+import Detail from "./Detail";
 import Catalog from "./Catalog";
 
 export {
-  Details,
+  Detail,
   Catalog,
   Home,
   NotFound

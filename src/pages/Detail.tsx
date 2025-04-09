@@ -1,9 +1,9 @@
 import { FC } from "react"
 
-const Details: FC = () => {
+const Detail: FC = () => {
   return (
     <div>Details</div>
   )
 }
 
-export default Details
+export default Detail

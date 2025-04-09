@@ -7,7 +7,7 @@ export const navLinks: NavLinksType[] = [
   },
   {
     title: "Movies",
-    path: "/movies"
+    path: "/movie"
   },
   {
     title: "Series",
