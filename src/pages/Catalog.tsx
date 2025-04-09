@@ -8,7 +8,7 @@ import { maxWidth } from "../styles"
 const Catalog: FC = () => {
   const [shows, setShows] = useState<MovieType[]>([])
   const [page, setPage] = useState<number>(1)
-  const [query, setQuery] = useSearchParams()
+  const [query, _setQuery] = useSearchParams()
   const { category } = useParams()
 
   const type = query.get("type") || "popular";

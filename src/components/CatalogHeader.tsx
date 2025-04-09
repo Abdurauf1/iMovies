@@ -4,7 +4,7 @@ const CatalogHeader: FC<{ category: string }> = ({ category }) => {
   const categoryTitles: any = {
     movie: "Movies",
     anime: "Anime",
-    series: "TV Series"
+    tv: "TV Series"
   }
 
   return (
