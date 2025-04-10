@@ -12,8 +12,10 @@ import Error from "./Error";
 import VideoModal from "./VideoModal";
 import CatalogHeader from "./CatalogHeader";
 import Loader from "./Loader";
+import Search from "./Search";
 
 export {
+  Search,
   Loader,
   CatalogHeader,
   VideoModal,

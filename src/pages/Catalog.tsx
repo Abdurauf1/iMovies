@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react"
 import { useGetShowsQuery } from "../features/GetShowsApiSlice"
-import { Card, CatalogHeader } from "../components"
+import { Card, CatalogHeader, Search } from "../components"
 import { useParams, useSearchParams } from "react-router-dom"
 import { MovieType } from "../types"
 import { maxWidth } from "../styles"
@@ -40,6 +40,7 @@ const Catalog: FC = () => {
   return (
     <div className="h-screen bg-gray-900 py-20">
       <div className={`${maxWidth}`}>
+        <Search />
         <CatalogHeader category={String(category)} />
         <section className="h-full">
           {!isLoading && (

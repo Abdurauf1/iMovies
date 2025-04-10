@@ -12,10 +12,6 @@ export const navLinks: NavLinksType[] = [
   {
     title: "Series",
     path: "/tv"
-  },
-  {
-    title: "Anime",
-    path: "/anime"
   }
 ]
 
@@ -39,12 +35,7 @@ export const sections: SectionsType[] = [
     title: "Top rated series",
     category: "tv",
     type: "top_rated",
-  },
-  // {
-  //   title: "Trending animes",
-  //   category: "anime",
-  //   type: "popular",
-  // },
+  }
 ]
 
 export const footerLinks: FooterLinksType[] = [
