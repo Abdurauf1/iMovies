@@ -9,7 +9,11 @@ const CatalogHeader: FC<{ category: string }> = ({ category }) => {
 
   return (
     <>
-      <h1 className="text-white">{categoryTitles[category]}</h1>
+      <h1
+        className="text-white mb-8 text-2xl font-bold"
+      >
+        {categoryTitles[category]}
+      </h1>
     </>
   )
 }

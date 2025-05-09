@@ -26,8 +26,13 @@ const Section: FC<PropType> = ({ title, category, type }) => {
   return (
     <section>
       <div className="flex justify-between">
-        <Link to={`/${category}?type=${type}`} className="text-white text-2xl font-bold hover:text-red-500 duration-200">
-          <span>{title} &gt;</span>
+        <Link
+          to={`/${category}?type=${type}`}
+          className="text-white text-2xl font-bold flex items-center gap-1 group"
+        >
+          <span className="text-[#ff0000]">|</span>
+          <span>{title}</span>
+          <span className="group-hover:text-[#ff0000] duration-200">{">"}</span>
         </Link>
       </div>
       <div>

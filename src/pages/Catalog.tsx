@@ -38,13 +38,15 @@ const Catalog: FC = () => {
   }, [data, isLoading, page])
 
   return (
-    <div className="h-screen bg-gray-900 py-20">
-      <div className={`${maxWidth}`}>
-        <Search />
+    <div className="bg-gray-900 pb-20">
+      <div className="h-[200px] flex items-end justify-center w-full bg-cover bg-center bg-[url(./assets/images/footer-bg.webp)]">
         <CatalogHeader category={String(category)} />
+      </div>
+      <div className={`${maxWidth} pt-7`}>
+        <Search />
         <section className="h-full">
           {!isLoading && (
-            <div className="flex flex-wrap justify-between gap-y-6">
+            <div className="flex flex-wrap  gap-5 gap-y-6">
               {shows.map((movie) => (
                 <div key={movie.id} className="rounded-lg overflow-hidden">
                   <Card movie={movie} category={String(category)} />
