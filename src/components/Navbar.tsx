@@ -21,14 +21,14 @@ const Navbar: FC = () => {
 
 
   return (
-    <header className={`${scroll > 20 ? "backdrop-blur-xl" : "bg-transparent"} w-full fixed top-0 z-50`}>
+    <header className={`${scroll > 20 ? "backdrop-blur-xl" : "bg-transparent"} w-full fixed top-0 z-50 md:px-0 px-6`}>
       <nav className="container py-5 flex justify-between items-center mx-auto">
         <a href="/" className="flex gap-1">
           <img className="w-8" src={PlayIcon} alt="play_icon" />
           <span className="font-bold text-2xl text-black dark:text-white">iMovies</span>
         </a>
         <div className="flex items-center gap-8">
-          <ul className="flex gap-5">
+          <ul className="gap-5 hidden sm:flex">
             {navLinks.map((navLink, index) => (
               <li key={index}>
                 <Link className="hover:text-[#ff0000] duration-200 text-white" to={navLink.path}>{navLink.title}</Link>
