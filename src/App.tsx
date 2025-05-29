@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Footer, Loader, Navbar, VideoModal } from "./components"
-import { lazy, Suspense } from "react"
+import React, { lazy, Suspense } from "react"
 
 const Home = lazy(() => import("./pages/Home"))
 const Catalog = lazy(() => import("./pages/Catalog"))
@@ -9,7 +9,7 @@ const NotFound = lazy(() => import("./pages/NotFound"))
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <Navbar />
       <VideoModal />
       <main>
@@ -23,7 +23,7 @@ function App() {
         </Suspense>
       </main>
       <Footer />
-    </>
+    </React.Fragment>
   )
 }
 

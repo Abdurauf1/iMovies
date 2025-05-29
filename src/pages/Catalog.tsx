@@ -44,11 +44,11 @@ const Catalog: FC = () => {
       </div>
       <div className={`${maxWidth} pt-7`}>
         <Search />
-        <section className="h-full">
+        <section>
           {isLoading ? (
             <Loader />
           ) : (
-            <div className="flex flex-wrap  gap-5 gap-y-6">
+            <div className="flex flex-wrap gap-5 gap-y-6 justify-center">
               {shows.map((movie) => (
                 <div key={movie.id} className="rounded-lg overflow-hidden">
                   <Card movie={movie} category={String(category)} />

@@ -14,18 +14,18 @@ const Hero: FC = () => {
 
   if (isLoading) return <Loader />
 
-  if (error) return <Error error="movies" />
+  if (error) return <Error error="Error fetching movies" />
 
   return (
     <Swiper
-      loop
-      className="lg:h-screen sm:h-[640px] xs:h-[520px] h-[460px] w-full"
-      slidesPerView={1}
       autoplay={{
         delay: 10000,
         disableOnInteraction: false
       }}
+      slidesPerView={1}
       modules={[Autoplay]}
+      className="lg:h-screen sm:h-[640px] xs:h-[520px] h-[460px] w-full"
+      loop
     >
       {data.results.map((movie: MovieType) => (
         <SwiperSlide
