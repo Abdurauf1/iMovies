@@ -15,7 +15,14 @@ const Image: FC<ImageProps> = ({ src, alt, className, width, height, effect }) =
       src={src}
       width={width}
       height={height}
-      className={`${duration} ${className} ${isImageLoaded ? effect : ""}`}
+      className={`
+        ${duration}
+        ${className}
+        ${!isImageLoaded
+          ? `opacity-0 ${effect === "zoomIn" ? "scale-95" : ""}`
+          : `opacity-100 ${effect === "zoomIn" ? "scale-100" : ""}`
+        }
+      `}
       alt={alt}
       onLoad={onLoad}
     />
