@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react"
 import { useGetShowsQuery } from "../features/GetShowsApiSlice"
-import { Card, CatalogHeader, Search } from "../components"
+import { Card, CatalogHeader, Loader, Search } from "../components"
 import { useParams, useSearchParams } from "react-router-dom"
 import { MovieType } from "../types"
 import { maxWidth } from "../styles"
@@ -45,7 +45,9 @@ const Catalog: FC = () => {
       <div className={`${maxWidth} pt-7`}>
         <Search />
         <section className="h-full">
-          {!isLoading && (
+          {isLoading ? (
+            <Loader />
+          ) : (
             <div className="flex flex-wrap  gap-5 gap-y-6">
               {shows.map((movie) => (
                 <div key={movie.id} className="rounded-lg overflow-hidden">

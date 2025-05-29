@@ -2,7 +2,7 @@ import { FC } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { MovieType } from "../types"
 import { Autoplay } from "swiper/modules"
-import { HeroSlide, Loading, Error } from "./"
+import { HeroSlide, Error, Loader } from "./"
 import { useGetShowsQuery } from "../features/GetShowsApiSlice"
 
 const Hero: FC = () => {
@@ -12,7 +12,7 @@ const Hero: FC = () => {
     page: 1
   })
 
-  if (isLoading) return <Loading />
+  if (isLoading) return <Loader />
 
   if (error) return <Error error="movies" />
 

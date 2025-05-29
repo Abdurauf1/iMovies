@@ -1,6 +1,7 @@
 import { FC, useState } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { ImageProps } from "../types"
+import { duration } from "../styles"
 
 const Image: FC<ImageProps> = ({ src, alt, className, width, height, effect }) => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false)
@@ -14,7 +15,7 @@ const Image: FC<ImageProps> = ({ src, alt, className, width, height, effect }) =
       src={src}
       width={width}
       height={height}
-      className={"transition-all duration-300 ease-in" + className + isImageLoaded ? effect : ""}
+      className={`${duration} ${className} ${isImageLoaded ? effect : ""}`}
       alt={alt}
       onLoad={onLoad}
     />

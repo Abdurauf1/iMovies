@@ -16,4 +16,4 @@ export const paragraph = "sm:text-base xs:text-[15.75px] text-[14.25px] leading-
 
 export const textColor = "dark:text-white text-black";
 
-export const duration = "duration-300 ease-in-out"
+export const duration = "transition-all duration-300 ease-in-out"

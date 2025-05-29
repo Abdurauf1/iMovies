@@ -1,8 +1,8 @@
 import { FC } from "react"
-import { Loading } from "./"
 import { MovieSlides } from "./"
 import { useGetShowsQuery } from "../features/GetShowsApiSlice"
 import { Link } from "react-router-dom"
+import { Skeleton } from "@mui/material"
 
 interface PropType {
   title: string
@@ -16,8 +16,6 @@ const Section: FC<PropType> = ({ title, category, type }) => {
     type: type,
     page: 1
   })
-
-  if (isLoading) return <Loading />
 
   if (error) {
     return <h1>Error fetching {title}.</h1>
@@ -36,7 +34,11 @@ const Section: FC<PropType> = ({ title, category, type }) => {
         </Link>
       </div>
       <div>
-        <MovieSlides movies={data.results.slice(0, 10)} category={category} />
+        {!isLoading ? (
+          <MovieSlides movies={data.results.slice(0, 10)} category={category} />
+        ) : (
+          <Skeleton className="mt-6 mb-14" variant="rectangular" width={170} height={250} />
+        )}
       </div>
     </section>
   )
