@@ -3,6 +3,7 @@ import { useGetShowQuery } from "../features/GetShowsApiSlice";
 import { useParams } from "react-router-dom";
 import { Error, Loader, Poster } from "../components";
 import { maxWidth } from "../styles";
+import { m } from "framer-motion"
 
 const Detail: FC = () => {
   const { category, id } = useParams()
@@ -32,16 +33,23 @@ const Detail: FC = () => {
 
   console.log(movie);
 
-
   const backgroundStyle = {
     backgroundImage: `linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.98),rgba(0,0,0,0.8) ,rgba(0,0,0,0.4)),url('https://image.tmdb.org/t/p/original/${backdrop_path}'`,
     backgroundPosition: "top",
     backgroundSize: "cover",
   };
+
   return (
     <section className={`w-full bg-gray-900 pb-20`} style={backgroundStyle}>
-      <div className={`${maxWidth}`}>
+      <div className={`${maxWidth} lg:py-36 sm:py-[136px] sm:pb-28 xs:py-28 xs:pb-12 pt-24 pb-8 flex flex-row lg:gap-12 md:gap-10 gap-8 justify-center`}>
         <Poster title={title} poster_path={poster_path} />
+        <m.div
+          className="text-gray-300"
+        >
+          <m.h2>
+            {title}
+          </m.h2>
+        </m.div>
       </div>
     </section>
   )
