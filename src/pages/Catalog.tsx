@@ -48,7 +48,7 @@ const Catalog: FC = () => {
           {isLoading ? (
             <Loader />
           ) : (
-            <div className="flex flex-wrap gap-5 gap-y-6 justify-center">
+            <div className="flex flex-wrap gap-5 gap-y-6">
               {shows.map((movie) => (
                 <div key={movie.id} className="rounded-lg overflow-hidden">
                   <Card movie={movie} category={String(category)} />
